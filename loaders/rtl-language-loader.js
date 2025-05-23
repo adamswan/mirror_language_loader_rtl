@@ -99,6 +99,7 @@ module.exports = function (source) {
   ])
     .process(source, { from: this.resourcePath })
     .then((result) => {
+      // 异步返回, 第一个参数是错误信息, 第二个参数是处理后的 CSS 代码
       callback(null, result.css);
     })
     .catch((error) => {
